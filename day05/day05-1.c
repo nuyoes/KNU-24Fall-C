@@ -38,12 +38,10 @@ int main() {
 
 	free(s_num);
 	free(score);
-	for (int i = 0; i < N; i++) {
-		free(name);
-		name = NULL;
-	}
+	for (int i = 0; i < N; i++) free(name);
 	s_num = NULL;
 	score = NULL;
+	name = NULL;
 
 	return 0;
 }
