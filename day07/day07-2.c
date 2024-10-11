@@ -24,7 +24,7 @@ int main(){
             y2=pow(y,2);
             xySqrt=sqrt(x2+y2);
 
-            // 16번째 줄 주석의 x,y 범위를 고려해 r=1이라고 가정해 작성
+            // 18번째 줄 주석의 x,y 범위를 고려해 r=1이라고 가정해 작성
             if(xySqrt<1)   
                 circle++;
         }
