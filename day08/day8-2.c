@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #define len 10
 
-// 1차 저장...
-
 int arr[len][len];
 
 void fillRandom() {
@@ -19,33 +17,36 @@ void printArray() {
 			printf("%d ", arr[i][j]);
 		printf("\n");
 	}
-
 }
  
-//여기 수정해야 댐
-void* movePointer(void* arr) { //왜 void형 포인터를 사용할까...? int..면안되나? 포인터 매개변수를 잘 모르겐는데
-	int* arrPointer = arr; //배열의 첫 번째 주소
-	int i = 0, j = 0;
+void* movePointer(void* arr) { //Q. 왜 void형 포인터를 사용할까...?
+	int* arrPointer = arr; //배열의 첫 번째 주소값 저장
+	int a = 0, b = 0, end = 0, sum = 0;
 
-	printf("현재 위치 : (0, 0), 배열의 값 : % d)", *arrPointer);
-	
-	while (1) {
-		if (arrPointer <= 100) {
-			printf("현재 위치 : (% d, % d), 배열의 값 : % d)", i, j, *(arrPointer + 1); //킵킵킵
+	while(!end){
+		printf("현재 위치 : (%d, %d), 배열의 값 : %d\n", a, b, *arrPointer);
+		sum += *arrPointer;
+
+		if(sum>=100){
+			printf("더 이상 이동할 수 없습니다. \n");
+			printf("종료 위치 : (%d, %d), 배열의 값 : %d\n", a, b, *arrPointer);
+			end=1;
+		} else {
+			b += *arrPointer;
+			arrPointer += *arrPointer;
+			while(b>10){
+				b -= 10;
+				a += 1;
+			}
 		}
-		else break;
 	}
-	
 }
 
 
 int main() {
-	//기본 코드?
 	fillRandom();
 	printArray();
 	movePointer(arr);
-
-
 
 	return 0;
 }
