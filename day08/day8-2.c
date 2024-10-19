@@ -34,7 +34,7 @@ void* movePointer(void* arr) { //Q. 왜 void형 포인터를 사용할까...?
 		} else {
 			b += *arrPointer;
 			arrPointer += *arrPointer;
-			while(b>10){
+			while(b>=10){
 				b -= 10;
 				a += 1;
 			}
