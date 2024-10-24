@@ -9,6 +9,7 @@ typedef struct Vector{
 VECTOR V[2];
 int Xresult, Yresult, Zresult;
 
+//벡터의 합
 void sum(){
 	Xresult = V[0].x + V[1].x;
 	Yresult = V[0].y + V[1].y;
@@ -17,6 +18,7 @@ void sum(){
 	printf("벡터의 합은  x:%d  y:%d  z:%d\n", Xresult, Yresult, Zresult);
 }
 
+//벡터의 차
 void dfr(){
 	Xresult = V[0].x - V[1].x;
 	Yresult = V[0].y - V[1].y;
@@ -25,6 +27,7 @@ void dfr(){
 	printf("벡터의 차는  x:%d  y:%d  z:%d\n", Xresult, Yresult, Zresult);
 }
 
+//벡터의 내적
 void innerP(){
 	Xresult = V[0].x * V[1].x;
 	Yresult = V[0].y * V[1].y;
@@ -33,6 +36,7 @@ void innerP(){
 	printf("벡터의 내적은  vec1ㆍvec2 = %d\n", Xresult + Yresult + Zresult);
 }
 
+//벡터의 외적
 void outerP(){
 	Xresult = V[0].y * V[1].z - V[0].z * V[1].y;
 	Yresult = V[0].z * V[1].x - V[0].x * V[1].z;
