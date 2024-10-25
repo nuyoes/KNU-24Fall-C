@@ -11,7 +11,7 @@ struct Product P[5];
 int sum = 0;
 
 //상품 정보 출력 함수, 구조체 변수 하나를 인자로 받도록 구현
-printProduct(struct Product PRODUCT) {
+void printProduct(struct Product PRODUCT) {
 	printf("상품 ID : %d\n", PRODUCT.id);
 	printf("상품명 : %s\n", PRODUCT.name);
 	printf("가격 : %d원\n", PRODUCT.price);
