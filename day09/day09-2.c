@@ -1,24 +1,22 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct Product {
+struct Product {
 	int id;
 	char name[20];
 	int price;
-} PRODUCT;
+};
 
-PRODUCT P[5];
+struct Product P[5];
 int sum = 0;
 
 //상품 정보 출력 함수, 구조체 변수 하나를 인자로 받도록 구현
-printProduct() {
-	printf("\n<<입력된 상품 목록>>\n");
-	for (int i = 0; i < sum; i++) {
-		printf("상품 ID : %d\n", P[i].id);
-		printf("상품명 : %s\n", P[i].name);
-		printf("가격 : %d원\n", P[i].price);
-		printf("\n");
-	}
+printProduct(struct Product PRODUCT) {
+	printf("상품 ID : %d\n", PRODUCT.id);
+	printf("상품명 : %s\n", PRODUCT.name);
+	printf("가격 : %d원\n", PRODUCT.price);
+	printf("\n");
+
 }
 
 int main() {
@@ -35,7 +33,10 @@ int main() {
 		printf("\n");
 	}
 
-	printProduct();
+	printf("\n<<입력된 상품 목록>>\n");
+
+	for (int i = 0; i < sum; i++)
+		printProduct(P[i]);
 
 	return 0;
 }
