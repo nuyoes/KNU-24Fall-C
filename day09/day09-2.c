@@ -3,7 +3,7 @@
 
 struct Product {
 	int id;
-	char name[20];
+	char name[51];
 	int price;
 };
 
@@ -23,11 +23,11 @@ int main() {
 	for (int i = 0; i < 5; i++) {
 		printf("상품 정보를 입력하세요 (입력 중단은 id에 0 입력)\n");
 		printf("상품 ID : ");
-		scanf("%d", &(P[i].id));  //왜 P[i].id로 써야 되지? 
+		scanf("%d", &(P[i].id));  
 		if (P[i].id == 0) break;
 		sum++;
 		printf("상품명 : ");
-		scanf("%s", P[i].name);
+		scanf("%50s", P[i].name);
 		printf("가격 : ");
 		scanf("%d", &(P[i].price));
 		printf("\n");
